@@ -1,0 +1,35 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.example.jeels_json_to_dart</id>
+
+    <name>Jeels Json to Dart</name>
+
+    <vendor email="jeelchandegra@example.com" url="https://jeelchandegra.vercel.app/">Jeel Chandegra</vendor>
+
+    <description><![CDATA[
+        Generate Dart model classes instantly from pasted JSON.<br><br>
+        Right-click any folder → <b>New → Jeels JSON to Dart</b>, paste your JSON, and get clean,
+        null-safe Dart model classes with <code>fromJson</code> / <code>toJson</code> methods —
+        including full support for nested objects, arrays, and snake_case to camelCase conversion.<br><br>
+        No more writing boilerplate model classes by hand.
+    ]]></description>
+
+    <version>1.0.0</version>
+
+    <idea-version since-build="233" until-build="253.*"/>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <resource-bundle>messages.MyMessageBundle</resource-bundle>
+
+    <actions>
+        <action id="JsonToDart.NewFromJson"
+                class="com.example.jeels_json_to_dart.JsonToDartAction"
+                text="Jeels JSON to Dart"
+                description="Generate a Dart model file from pasted JSON"
+                icon="/icons/jsonToDart.svg">
+            <add-to-group group-id="NewGroup" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
